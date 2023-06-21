@@ -1,5 +1,5 @@
 <?php
-// Comment extension, https://github.com/GiovanniSalmeri/yellow-comment
+// Comment extension, https://github.com/pmoralesgarcia/yellow-webmention
 
 class YellowWebmention {
     const VERSION = "0.1.0";
