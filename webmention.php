@@ -1,6 +1,6 @@
 <?php
 class YellowWebmention {
-    const VERSION = "0.1.3";
+    const VERSION = "0.1.4";
     public $yellow;         // access to API
 
     // Handle initialisation
@@ -12,7 +12,17 @@ class YellowWebmention {
     public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
         if ($name=="webmention" && ($type=="block" || $type=="inline")) {
-            $output .= '<div id="webmentions"></div>';
+            $output = '<div class="wm_summary">';
+            $output .= '<ul class="menicons">';
+            $output .= '<li class="micon"><i class="fa-solid fa-star"></i>&nbsp<span id="wm_like1"></span>&nbsp; likes</li>';
+            $output .= '<li class="micon"><i class="fa-regular fa-file"></i>&nbsp<span id="wm_ment1"></span>&nbsp; mentions</li>';
+            $output .= '<li class="micon"><i class="fa-regular fa-comment"></i>&nbsp<span id="wm_reply1"> </span>&nbsp; </li>';
+            $output .= '<li class="micon"><i class="fa-solid fa-repeat"></i>&nbsp<span id="wm_repost1"></span>&nbsp;reposts</li>';
+            $output .= '<li class="micon"><i class="fa-regular fa-bookmark"></i>&nbsp<span id="wm_bkmk1"></span>&nbsp;bookmarks</li>';
+            $output .= '</div>';
+            $output .= '<hr>';
+            $output .= '<div id="mentionpanel"></div>';
+            
         }
         return $output;
     }
