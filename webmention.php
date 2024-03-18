@@ -1,6 +1,6 @@
 <?php
 class YellowWebmention {
-    const VERSION = "0.1.2";
+    const VERSION = "0.1.3";
     public $yellow;         // access to API
 
     // Handle initialisation
@@ -12,20 +12,7 @@ class YellowWebmention {
     public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
         if ($name=="webmention" && ($type=="block" || $type=="inline")) {
-            $output = '<div class="wm_summary">';
-            $output .= '<ul class="menicons">';
-            $output .= '<li class="micon"><i class="material-icons">star_border</i><span id="wm_like1"></span>&nbsp;likes</li>';
-            $output .= '<li class="micon"><i class="material-icons-outlined">description</i><span id="wm_ment1"></span>&nbsp;mentions</li>';
-            $output .= '';
-            $output .= '<li class="micon"><i class="material-icons">chat_bubble_outline</i><span id="wm_reply1"></span></li>';
-            $output .= '';
-            $output .= '<li class="micon"><i class="material-icons">repeat</i><span id="wm_repost1"></span></li>';
-            $output .= '';
-            $output .= '<li class="micon"><i class="material-icons">bookmark_border</i><span id="wm_bkmk1"></span>&nbsp;bookmarks</li>';
-            $output .= '';
-            $output .= '</div>';
-            $output .= '<hr>';
-            $output .= '<div id="mentionpanel"></div>';
+            $output .= '<div id="webmentions"></div>';
         }
         return $output;
     }
@@ -36,7 +23,7 @@ class YellowWebmention {
             if ($name=="header") {
                 $extensionLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreExtensionLocation");
                 $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}webmention.css\" />\n";
-                $output .= "<script type=\"text/javascript\" defer=\"defer\" src=\"{$extensionLocation}webmention.js\"></script>\n";
+                $output .= "<script async type=\"text/javascript\" defer=\"defer\" src=\"{$extensionLocation}webmention.js\"></script>\n";
                 $output .= "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined\" rel=\"stylesheet\">";
 
             }
