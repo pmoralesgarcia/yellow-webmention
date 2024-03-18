@@ -1,6 +1,6 @@
 <?php
 class YellowWebmention {
-    const VERSION = "0.1.4";
+    const VERSION = "0.1.9";
     public $yellow;         // access to API
 
     // Handle initialisation
