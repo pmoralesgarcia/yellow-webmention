@@ -14,11 +14,15 @@ class YellowWebmention {
         if ($name=="webmention" && ($type=="block" || $type=="inline")) {
             $output = '<div class="wm_summary">';
             $output .= '<ul class="menicons">';
-            $output .= '<li class="micon"><i class="fa-solid fa-star"></i>&nbsp<span id="wm_like1"></span>&nbsp; likes</li>';
-            $output .= '<li class="micon"><i class="fa-regular fa-file"></i>&nbsp<span id="wm_ment1"></span>&nbsp; mentions</li>';
-            $output .= '<li class="micon"><i class="fa-regular fa-comment"></i>&nbsp<span id="wm_reply1"> </span>&nbsp; </li>';
-            $output .= '<li class="micon"><i class="fa-solid fa-repeat"></i>&nbsp<span id="wm_repost1"></span>&nbsp;reposts</li>';
-            $output .= '<li class="micon"><i class="fa-regular fa-bookmark"></i>&nbsp<span id="wm_bkmk1"></span>&nbsp;bookmarks</li>';
+            $output .= '<li class="micon"><i class="material-icons">star_border</i><span id="wm_like1"></span>&nbsp;likes</li>';
+            $output .= '<li class="micon"><i class="material-icons-outlined">description</i><span id="wm_ment1"></span>&nbsp;mentions</li>';
+            $output .= '';
+            $output .= '<li class="micon"><i class="material-icons">chat_bubble_outline</i><span id="wm_reply1"></span></li>';
+            $output .= '';
+            $output .= '<li class="micon"><i class="material-icons">repeat</i><span id="wm_repost1"></span></li>';
+            $output .= '';
+            $output .= '<li class="micon"><i class="material-icons">bookmark_border</i><span id="wm_bkmk1"></span>&nbsp;bookmarks</li>';
+            $output .= '';
             $output .= '</div>';
             $output .= '<hr>';
             $output .= '<div id="mentionpanel"></div>';
