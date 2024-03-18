@@ -81,15 +81,15 @@ function showMentions(mentions) {
 
     // Second line = name of post linked to post URL, though
     // if no name then is just URL
-    const mention_art = document.createElement("a");
-    m_art.href = m.url;
+    const mentionArt = document.createElement("a");
+    mentionArt.href = m.url;
     if (m.name) {
-      m_art.innerHTML = m.name;
+      mentionArt.innerHTML = m.name;
     }
     else {
-      m_art.innerHTML = m.url;
+      mentionArt.innerHTML = m.url;
     }
-    mentionInfo.appendChild(m_art);
+    mentionInfo.appendChild(mentionArt);
 
     if (m.published) {
       const date = new Date(m.published);
