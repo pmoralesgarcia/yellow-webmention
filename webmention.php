@@ -12,7 +12,8 @@ class YellowWebmention {
     public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
         if ($name=="webmention" && ($type=="block" || $type=="inline")) {
-            $output = '<div class="wm_summary">';
+            $output = '<div class="webmention">';
+            $output .= '<ul class="menicons">';
             $output .= '<ul class="menicons">';
             $output .= '<li class="micon"><i class="material-icons">star_border</i><span id="wm_like1"></span>&nbsp;likes</li>';
             $output .= '<li class="micon"><i class="material-icons-outlined">description</i><span id="wm_ment1"></span>&nbsp;mentions</li>';
@@ -26,6 +27,8 @@ class YellowWebmention {
             $output .= '</div>';
             $output .= '<hr>';
             $output .= '<div id="mentionpanel"></div>';
+            $output .= '</div>';
+
             
         }
         return $output;
@@ -38,7 +41,7 @@ class YellowWebmention {
                 $extensionLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreExtensionLocation");
                 $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}webmention.css\" />\n";
                 $output .= "<script async type=\"text/javascript\" defer=\"defer\" src=\"{$extensionLocation}webmention.js\"></script>\n";
-                $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}icons.css\" />\n";
+                $output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}icons.css\" />\n";
 
             }
             return $output;
