@@ -20,11 +20,11 @@ function showCounts(index, data) {
   if (data.type.like) { document.getElementById("webmentionLike"+index).innerHTML = data.type.like; }
   if (data.type.mention) { document.getElementById("webmentionMention"+index).innerHTML = data.type.mention; }
   if (data.type.reply) {
-      document.getElementById("wm_reply"+index).innerHTML =
+      document.getElementById("webmentionReply"+index).innerHTML =
         pluralize(data.type.reply,"reply","replies");
   }
   if (data.type.repost) {
-    document.getElementById("wm_repost"+index).innerHTML =
+    document.getElementById("webmentionRepost"+index).innerHTML =
       pluralize(data.type.repost,"repost","reposts");
   }
   if (data.type.bookmark) { document.getElementById("wm_bkmk"+index).innerHTML = data.type.bookmark; }
@@ -36,7 +36,7 @@ function pluralize(num,singular,plural) {
 }
 
 function showMentions(mentions) {
-  const panel = document.getElementById("mentionpanel");
+  const panel = document.getElementById("mentionPanel");
   for(i=0;i<mentions.children.length;i++) {
 
     const mention = mentions.children[i];
@@ -45,7 +45,7 @@ function showMentions(mentions) {
     mentionDiv.className = "webmention";
     panel.appendChild(mentionDiv);
 
-    const mentionentionImg = document.createElement("div");
+    const webmentionImg = document.createElement("div");
     if (m.author.photo) {
       mentionImg.setAttribute("src",m.author.photo);
     }
@@ -56,26 +56,26 @@ function showMentions(mentions) {
     mentionDiv.appendChild(mentionImg);
 
     const mentionentionInfo = document.createElement("div");
-    mentionInfo.className = "wmentionInfo";
+    mentionInfo.className = "webmentionInfo";
     mentionDiv.appendChild(mentionInfo);
 
     // First line is author's name, liked to author's web site if present
     if (m.author.url) {
       const mention_auth = document.createElement("a");
-      m_auth.href = m.author.url;
+      mentionAuthor.href = m.author.url;
       if (m.author.name) {
-        m_auth.innerHTML = m.author.name;
+        mentionAuthor.innerHTML = m.author.name;
       }
-      m_auth.className = "m_author";
-      mentionInfo.appendChild(m_auth);
+      mentionAuthor.className = "mentionAuthor";
+      mentionInfo.appendChild(mentionAuthor);
 
     }
     else {
       if (m.author.name) {
         const mention_auth = document.createElement("span");
-        m_auth.innerHTML = m.author.name;
-        m_auth.className = "m_author";
-        mentionInfo.appendChild(m_auth);
+        mentionAuthor.innerHTML = m.author.name;
+        mentionAuthor.className = "mentionAuthor";
+        mentionInfo.appendChild(mentionAuthor);
       }
     }
 
