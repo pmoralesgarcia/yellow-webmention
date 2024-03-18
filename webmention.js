@@ -93,7 +93,7 @@ function showMentions(mentions) {
 
     if (m.published) {
       const date = new Date(m.published);
-      const mentionentionPub = document.createElement("TIME");
+      const mentionmentionPub = document.createElement("TIME");
       mentionPub.datetime = m.published;
       mentionPub.innerHTML = "Published: " + d.toString();
       mentionPub.className = "mentionPublished";
