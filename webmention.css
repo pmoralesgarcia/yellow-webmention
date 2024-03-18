@@ -1,8 +1,17 @@
 /* Webmentions */
 
 .webmention {
-  display: flex;
-  padding-top: 10px;
+  clear: both;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background-color: inherit;
+  border-radius: 3px;
+}
+
+.webmention img {
+    float: left;
+    margin-right: 1em;
+    border-radius: 100%;
 }
 
 .wm_box {
@@ -16,17 +25,38 @@
   flex-direction: column;
 }
 
+.wm_info a {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 .m_author {
   font-size: 0.8rem;
   text-decoration: none;
   color: black;
+  display: inline;
+  font-weight: bold;
 }
 .m_published {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 .wm_summary {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 /* Most likely use font awesome to replace this code. */
 .menicons {
@@ -34,6 +64,7 @@
   flex-direction: row;
   align-items: center;
   padding-left: 0px;
+  overflow-x: scroll;
 }
 .micon {
   display: flex;
@@ -43,17 +74,10 @@
   padding-right: 15px;
 }
 
-
-/* Rules for sizing the icon. */
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px;  }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-
-/* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
-
-/* Rules for using icons as white on a dark background. */
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+@media only screen and (max-width: 600px) {
+  .webmention img {
+   max-width: 100%;
+   /* width: 100%; */
+   height: 100%;
+  }
+} 

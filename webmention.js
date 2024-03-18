@@ -1,4 +1,4 @@
-var target_url = "<?php echo $link ?>";
+var target_url = window.location.href.toString().replace(/\/edit/, "");
 var target_url1 = "https://www.disquisitioner.com/posts/post-darkmode/";
 
 // jsonp=f option to disable json return
