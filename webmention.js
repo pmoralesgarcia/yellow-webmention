@@ -1,5 +1,4 @@
 const targetUrl = window.location.href.toString().replace(/\/edit/, "");
-const targetUrl1 = "https://www.disquisitioner.com/posts/post-darkmode/";
 
 const countUrl = "https://webmention.io/api/count.json?target=";
 const mentionUrl = "https://webmention.io/api/mentions.jf2?target=";
