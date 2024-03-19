@@ -52,7 +52,7 @@ Layout file with webmentions:
 
 The following settings can be configured in file `system/extensions/yellow-system.ini`:
 
-Coming Soon! 
+`webmentionEndpoint: PUT_YOUR_WEBMENTION_ENDPOINT_HERE`
 
 ## Acknowledgements
 
