@@ -15,14 +15,14 @@ class YellowWebmention {
             $output = '<div class="webmention">';
             $output .= '<ul class="menicons">';
             $output .= '<ul class="menicons">';
-            $output .= '<li class="micon"><i class="material-icons">star_border</i><span id="wm_like1"></span>&nbsp;likes</li>';
-            $output .= '<li class="micon"><i class="material-icons-outlined">description</i><span id="wm_ment1"></span>&nbsp;mentions</li>';
+            $output .= '<li class="micon"><i class="material-icons">star_border</i><span id="wm_like1"></span>&nbsp;</li>';
+            $output .= '<li class="micon"><i class="material-icons-outlined">description</i><span id="wm_ment1"></span>&nbsp;</li>';
             $output .= '';
             $output .= '<li class="micon"><i class="material-icons">chat_bubble_outline</i><span id="wm_reply1"></span></li>';
             $output .= '';
             $output .= '<li class="micon"><i class="material-icons">repeat</i><span id="wm_repost1"></span></li>';
             $output .= '';
-            $output .= '<li class="micon"><i class="material-icons">bookmark_border</i><span id="wm_bkmk1"></span>&nbsp;bookmarks</li>';
+            $output .= '<li class="micon"><i class="material-icons">bookmark_border</i><span id="wm_bkmk1"></span>&nbsp;</li>';
             $output .= '';
             $output .= '</div>';
             $output .= '<hr>';
