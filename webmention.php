@@ -1,6 +1,6 @@
 <?php
 class YellowWebmention {
-    const VERSION = "0.1.9";
+    const VERSION = "0.9.1";
     public $yellow;         // access to API
 
     // Handle initialisation
@@ -10,7 +10,7 @@ class YellowWebmention {
     }
 
     // Handle page content of shortcut
-    public function onParseContentShortcut($page, $name, $text, $type) {
+    public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="webmention" && ($type=="block" || $type=="inline")) {
             if ($this->yellow->extension->isExisting("icon")) {
