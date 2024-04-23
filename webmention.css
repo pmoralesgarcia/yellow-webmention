@@ -97,7 +97,7 @@
 .m_author {
   font-size: 0.8rem;
   text-decoration: none;
-  color: black;
+  color: inherit;
   display: inline;
   font-weight: bold;
 }
